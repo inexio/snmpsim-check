@@ -14,7 +14,7 @@ monitoring check plugin for the [snmpsim](https://github.com/etingof/snmpsim) [R
       -U, --url=      The base URL of the SNMPSIM server
       -u, --username= The username for the server if set
       -p, --password= The username for the server if set
-      -P, --path=     The data path to a agent file on the server, needs to be set if full check is enabled
+      -P, --path=     The data path to an agent file on the server, needs to be set if full check is enabled
       -F, --full      Run a full check of the API
 
     Help Options:
