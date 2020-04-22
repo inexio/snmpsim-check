@@ -1,0 +1,28 @@
+# .goreleaser.yml
+before:
+  hooks:
+  - go mod download
+
+builds:
+  -
+    id: "check-management-client"
+    dir: ./managementClientCheck
+    main: ./main.go
+    binary: check-management-client
+
+  -
+    id: "check-metrics-client"
+    dir: ./metricsClientCheck
+    main: ./main.go
+    binary: check-metrics-client
+
+archives:
+  -
+    builds:
+    - check-management-client
+    - check-metrics-client
+    
+    replacements:
+      amd64: 64-bit
+      386: 32-bit
+      darwin: macOS
