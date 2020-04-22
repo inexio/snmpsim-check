@@ -11,7 +11,7 @@ var opts struct {
 	URL       string `short:"U" long:"url" description:"The base URL of the SNMPSIM server" required:"true"`
 	Username  string `short:"u" long:"username" description:"The username for the server if set" required:"false"`
 	Password  string `short:"p" long:"password" description:"The username for the server if set" required:"false"`
-	Path      string `short:"P" long:"path" description:"The data path to a agent file on the server, needs to be set if full check is enabled" required:"false"`
+	Path      string `short:"P" long:"path" description:"The data path to an agent file on the server, needs to be set if full check is enabled" required:"false"`
 	FullCheck []bool `short:"F" long:"full" description:"Run a full check of the API" required:"false"`
 }
 
