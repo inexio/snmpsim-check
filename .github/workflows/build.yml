@@ -30,7 +30,7 @@ jobs:
             dep ensure
         fi
     - name: BuildManagementClientCheck
-      run: go build -v ./managementClientCheck
+      run: go build -v -o management-client-check ./managementClientCheck
       
     - name: BuildMetricsClientCheck
-      run: go build -v ./metricsClientCheck
+      run: go build -v -o metrics-client-check ./metricsClientCheck
