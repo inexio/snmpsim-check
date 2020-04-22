@@ -14,12 +14,11 @@ monitoring check plugin for the [snmpsim](https://github.com/etingof/snmpsim) [R
       -U, --url=      The base URL of the SNMPSIM server
       -u, --username= The username for the server if set
       -p, --password= The username for the server if set
-      -P, --path=     The data path to a agent file on the server
+      -P, --path=     The data path to a agent file on the server, needs to be set if full check is enabled
+      -F, --full      Run a full check of the API
 
     Help Options:
       -h, --help      Show this help message
-
-    exit status 3
     
 ## Usage of the check-metrics-client
 
@@ -30,11 +29,10 @@ monitoring check plugin for the [snmpsim](https://github.com/etingof/snmpsim) [R
       -U, --url=      The base URL of the SNMPSIM server
       -u, --username= The username for the server if set
       -p, --password= The username for the server if set
+      -F, --full      Run a full check of the API
 
     Help Options:
       -h, --help      Show this help message
-
-    exit status 3
     
 ## Installation
 
