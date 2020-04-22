@@ -8,9 +8,10 @@ import (
 )
 
 var opts struct {
-	URL      string `short:"U" long:"url" description:"The base URL of the SNMPSIM server" required:"true"`
-	Username string `short:"u" long:"username" description:"The username for the server if set" required:"false"`
-	Password string `short:"p" long:"password" description:"The username for the server if set" required:"false"`
+	URL       string `short:"U" long:"url" description:"The base URL of the SNMPSIM server" required:"true"`
+	Username  string `short:"u" long:"username" description:"The username for the server if set" required:"false"`
+	Password  string `short:"p" long:"password" description:"The username for the server if set" required:"false"`
+	FullCheck []bool `short:"F" long:"full" description:"Run a full check of the API" required:"false"`
 }
 
 func main() {
@@ -117,9 +118,11 @@ func main() {
 		}
 	}
 
-	err = metricsClient.SetUsernameAndPassword(opts.Username, opts.Password)
-	if err != nil {
-		response.UpdateStatus(monitoringplugin.CRITICAL, "Can't set username and password")
-		return
+	if opts.FullCheck[0] == true {
+		err = metricsClient.SetUsernameAndPassword(opts.Username, opts.Password)
+		if err != nil {
+			response.UpdateStatus(monitoringplugin.CRITICAL, "Can't set username and password")
+			return
+		}
 	}
 }
